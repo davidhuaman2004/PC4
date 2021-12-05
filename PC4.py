@@ -107,16 +107,16 @@ print("=====================================================================")
 #  The email !#mary-=@msca.net is invalid
 
 # Escriba una expresión regular para validar un correo
-regex = r""
+evaluar = ['n.john.smith@gmail.com', '87victory@hotmail.com', '!#mary-=@msca.net']
 
-emails = ['n.john.smith@gmail.com', '87victory@hotmail.com', '!#mary-=@msca.net']
-for example in emails:
-    # Match the regex to the string
-    if re.match(regex, example):
-        # Complete the format method to print out the result
-        print("The email {email_example} is a valid email".format(email_example=example))
-    else:
-        print("The email {email_example} is invalid".format(email_example=example))   
+correo= r"[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}"
+
+for email in evaluar:
+    if re.findall(correo, email):
+        print(f"El correo {email} es un correo valido")
+        continue
+    print(f"El correo {email} es un correo invalido")
+   
 print("====================================================================")
 print()
 print()
